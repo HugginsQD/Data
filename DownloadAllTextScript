@@ -1,0 +1,18 @@
+#This script downloads all the text on a wepage ensure you copy an paste the squeezed text line othwerwise youll get open the text in the console and likely slow it down
+import webbrowser
+import requests
+from bs4 import BeautifulSoup
+import json
+
+print('Pleast Copy and paste URL into Console')
+url = input()
+# Open the URL in your default web browser
+webbrowser.open(url)
+
+# Download image and save path
+#def download_image(imageURL, VWDownloadFold, nameclass)
+page = requests.get(url)
+
+soup = BeautifulSoup(page.text, 'html') #Features ensure hfml is parsed by lxml across all systems
+
+print(soup)
